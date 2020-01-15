@@ -41,7 +41,5 @@ class IrisManager:
         self.model.compileModel(hp)
         print("Model compiled!! \n")
         print("Fiting...\n")
-        self.model.fit(0.2)
-        
-manager=IrisManager()
-manager.run()
+        loss = self.model.fit(0.2)
+        return hp,loss
