@@ -8,8 +8,8 @@ class IrisModel:
     def __init__(self,dataLoader):
         self.model=None
         self.dataLoader=dataLoader
-        self.H
-    def loadModel(self,hp):
+        
+    def compileModel(self,hp):
         model= Sequential()
         
         
@@ -31,7 +31,7 @@ class IrisModel:
         train_x, test_x, train_y, test_y = self.dataLoader.dataSplit(test_size)
         self.model.fit(train_x, train_y, verbose=2, batch_size=5, epochs=200)
 
-        results = model.evaluate(test_x, test_y)
+        results = self.model.evaluate(test_x, test_y)
 
         print('Final test set loss: {:4f}'.format(results[0]))
         print('Final test set accuracy: {:4f}'.format(results[1]))
