@@ -12,6 +12,8 @@ class Hyperparameter:
 
         return None
 
+    def getDict(self):
+        return self.hyper
     def __str__(self):
         text=("Hyperparameters \n")
         for i in self.hyper:
