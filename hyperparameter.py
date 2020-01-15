@@ -13,7 +13,7 @@ class Hyperparameter:
         return None
 
     def __str__(self):
-        print("Hyperparameters \n")
+        text=("Hyperparameters \n")
         for i in self.hyper:
-            print("- {} -> {} \n".format(i,self.get(i)))
-        
+            text=text+("- {} -> {} \n".format(i,self.get(i)))
+        return text
