@@ -35,3 +35,4 @@ class IrisModel:
 
         print('Final test set loss: {:4f}'.format(results[0]))
         print('Final test set accuracy: {:4f}'.format(results[1]))
+        return results[0]
