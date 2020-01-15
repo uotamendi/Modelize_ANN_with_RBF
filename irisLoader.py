@@ -18,7 +18,8 @@ class IrisLoader:
     def encode(self):    
         encoder = OneHotEncoder(sparse=False)
         self.y = encoder.fit_transform(self.y_)
-
+        
     def dataSplit(self,test_size):
+        
         return train_test_split(self.x, self.y, test_size=test_size)
     
