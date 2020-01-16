@@ -10,8 +10,11 @@ dataManager=ModelDataManager(filename)
 irisManager=IrisManager()
 
 ## Load training data for 200 iterations
-for i in range(200):
-    hp,loss=irisManager.run()
-    dataManager.addRow(hp,loss)
-    
+try: 
+    for i in range(200):
+        print("----> Iteration Nº{}".format(i))
+        hp,loss,acc=irisManager.run()
+        dataManager.addRow(hp,loss,acc)
+except :
+    dataManager.save()
 dataManager.save()
